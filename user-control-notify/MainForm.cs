@@ -19,12 +19,6 @@ namespace user_control_notify
         {
             if (sender is UserControlWithNotify userControlWithNotify)
             {
-                var builder = new List<string>();
-                builder.Add($"Control Name: {userControlWithNotify.Name}");
-                builder.Add($"Property Name: {e.PropertyName}");
-                builder.Add($"New Value: {typeof(UserControlWithNotify).GetProperty(e.PropertyName).GetValue(userControlWithNotify)}");
-                var joined = string.Join(Environment.NewLine, builder);
-
                 richTextBox.Clear();
                 richTextBox.AppendText("Control Name: ", Color.Blue, style: FontStyle.Bold);
                 richTextBox.AppendText(userControlWithNotify.Name, newLine: true);
